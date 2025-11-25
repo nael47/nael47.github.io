@@ -1,0 +1,182 @@
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --primary-color: #00f3ff; /* Neon Cyan */
+    --secondary-color: #bd00ff; /* Neon Purple */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(10, 10, 10, 0.8);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Background Animation Canvas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+}
+
+/* Glassmorphism Cards */
+.resume-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem !important;
+    margin: 2rem 0;
+    border-radius: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 243, 255, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Navigation */
+#sideNav {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border-right: 1px solid var(--glass-border);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px var(--primary-color);
+}
+
+.img-profile {
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color);
+    transition: transform 0.5s ease;
+}
+
+.img-profile:hover {
+    transform: scale(1.05) rotate(5deg);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
+}
+
+/* Typography & Elements */
+.subheading {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    color: var(--secondary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.social-icon {
+    background-color: transparent !important;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color) !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Timeline/Experience Items */
+.d-flex.flex-column.flex-md-row {
+    border-left: 2px solid var(--glass-border);
+    padding-left: 20px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.d-flex.flex-column.flex-md-row::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Skills Icons */
+.dev-icons .list-inline-item i {
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.dev-icons .list-inline-item i:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+    text-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Typing Effect Cursor */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
